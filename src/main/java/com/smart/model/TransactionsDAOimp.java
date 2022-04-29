@@ -31,7 +31,7 @@ public class TransactionsDAOimp implements TransactionsDAO{
 			String fname=rs.getString("FirstName");
 			String lname=rs.getString("LastName");
 			String mobileNumber=rs.getString("MobileNumber");
-			String accountNumber=rs.getString("AccountNumber");
+			
 			int amount=rs.getInt("Amount");
 			String creditTo=rs.getString("CreditedTo");
 			String debitTo=rs.getString("DebitedTo");
@@ -41,7 +41,7 @@ public class TransactionsDAOimp implements TransactionsDAO{
 			td.setFirstName(fname);
 			td.setLastName(lname);
 			td.setMobileNumber(mobileNumber);
-			td.setAccountNumber(accountNumber);
+			
 			td.setAmount(amount);
 			td.setCredit(creditTo);
 			td.setDebit(debitTo);
@@ -50,13 +50,14 @@ public class TransactionsDAOimp implements TransactionsDAO{
 			
 			transactions.add(td);
 		}
+	
 		
 	}catch(Exception e) {
 		System.out.println(e);
 	}
 		
 		
-	return null;
+	return transactions;
 		
 	}
 	

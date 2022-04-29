@@ -42,7 +42,15 @@
                 >
               </li>
              
-             
+             <li class="sidebar-item">
+                <a
+                  class="sidebar-link waves-effect waves-dark sidebar-link"
+                  href="${pageContext.request.contextPath }/TransactionsController?action=transactions"
+                  aria-expanded="false"
+                  ><i class=" fas fa-street-view"></i
+                  ><span class="hide-menu">Transactions</span></a
+                >
+              </li>
              
     
               <li class="sidebar-item p-3">

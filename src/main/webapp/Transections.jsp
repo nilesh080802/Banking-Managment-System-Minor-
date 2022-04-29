@@ -199,14 +199,8 @@
                 >
                   <i class="mdi mdi-bell font-24"></i>
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
+                
+               
               </li>
               <!-- ============================================================== -->
               <!-- End Comment -->
@@ -427,25 +421,26 @@
                          <th>Serial Number</th>
                           <th>First Name</th>
                           <th>Last Name</th>
-                           <th>Date Time</th>
-                           <th>Account number</th>
                           <th>Contact number</th>
                           <th>Amount</th>
+                          <th>Debited to</th>
+                          <th>Credited to</th>
+                           <th>Date Time</th>
                         </tr>
                       </thead>
                       <tbody>
                          <% int i=1;%>
-							 <c:forEach var="customers" items="${customers}">
+							 <c:forEach var="transactions" items="${transactions}">
 							  	<tr>
 							  	<td><%out.print(i++); %></td>
-							    <td>${customers.getFirstName()}</td>
-							    <td>${customers.getLastName()}</td>
-							    <td>${customers.getDateTime()}</td>
-							    <td>${customers.getAccount()}</td>
-							    <td>${customers.getContactNumber()}</td>
-							    <td>${customers.getAmount()}</td>
-							  
-								</tr>
+							    <td>${transactions.getFirstName()}</td>
+							    <td>${transactions.getLastName()}</td>
+							    <td>${transactions.getMobileNumber()}</td>
+							    <td>${transactions.getAmount()}</td>
+							    <td>${transactions.getCredit()}</td>
+							    <td>${transactions.getDebit()}</td>
+							    <td>${transactions.getDateTime()}</td>
+							    </tr>
 							</c:forEach> 
                         </tr>
                      </tbody>

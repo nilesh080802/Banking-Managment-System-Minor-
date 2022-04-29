@@ -49,6 +49,7 @@ public class TransactionsController extends HttpServlet {
 			debit="SmartPay01";
 			td.setCredit(credit);
 			td.setDebit(debit);
+			doPost(request,response,td,action);
 		break;
 		case "withdraw":
 			System.out.println(action);
@@ -56,8 +57,12 @@ public class TransactionsController extends HttpServlet {
 			credit="SmartPay01";
 			td.setCredit(credit);
 			td.setDebit(debit);
+			doPost(request,response,td,action);
 			break;
-		case "transsactions": transactionList(request,response);break;
+		case "transactions": transactionList(request,response);
+		
+		
+		break;
 		default :break;
 			
 		}
@@ -65,13 +70,17 @@ public class TransactionsController extends HttpServlet {
 		 
 		
 		
-		doPost(request,response,td,action);
+	
 	}
 
-	private void transactionList(HttpServletRequest request, HttpServletResponse response) {
+	private void transactionList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ArrayList<TransactionsData> transactions =tdi.get();;
+		ArrayList<TransactionsData> transactions =tdi.get();
+//		System.out.println(transactions);
 		request.setAttribute("transactions", transactions);
+		RequestDispatcher rd = request.getRequestDispatcher("Transections.jsp");
+		rd.forward(request, response);
+//		System.out.println("forword to jsp");
 	}
 
 	/**
@@ -88,7 +97,7 @@ public class TransactionsController extends HttpServlet {
 		
 		int amount = Integer.parseInt(request.getParameter("amount")); 
 		
-		System.out.println(amount);
+		
 		LocalDateTime dt=LocalDateTime.now();
 		DateTimeFormatter df=DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss");
 		
@@ -104,8 +113,8 @@ public class TransactionsController extends HttpServlet {
 		td.setAmount(amount);
 		td.setDateTime(dateTime);
 		
-		System.out.println(action);
-		System.out.println(fname+"  "+accountNumber);
+//		System.out.println(action);
+//		System.out.println(fname+"  "+accountNumber);
 		if(new Verification().verifyAccount(fname,accountNumber)) {
 		
 			
@@ -118,7 +127,7 @@ public class TransactionsController extends HttpServlet {
 									if((Amount=new Verification().verifyAmountForSendMoney(amount)) !=0) {
 											
 										Amount-=amount;
-										System.out.println(Amount);
+									
 										new Verification().updateAmountForSendMoney(Amount,accountNumber,amount);
 											
 										tdi.addTransactionsData(td);
