@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import com.mysql.jdbc.Connection;
 
 public class DBConnection {
-	private static String jdbcURL="jdbc:mysql://localhost:3306/hearme";
+	private static String jdbcURL="jdbc:mysql://localhost:3306/smartpay";
 	private static String jdbcUsername ="root";
 	private static String jdbcPassword ="";
 	static Connection connection =null;
