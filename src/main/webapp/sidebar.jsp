@@ -38,8 +38,7 @@
                   href="${pageContext.request.contextPath }/CustomersController?action=cust"
                   aria-expanded="false"
                   ><i class=" fas fa-street-view"></i
-                  ><span class="hide-menu">Customers</span></a
-                >
+                  ><span class="hide-menu">Customers</span></a>
               </li>
              
              <li class="sidebar-item">

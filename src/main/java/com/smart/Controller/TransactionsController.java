@@ -49,15 +49,19 @@ public class TransactionsController extends HttpServlet {
 			debit="SmartPay01";
 			td.setCredit(credit);
 			td.setDebit(debit);
+			 
 			doPost(request,response,td,action);
-		break;
+		
+			break;
 		case "withdraw":
 			System.out.println(action);
 			debit=request.getParameter("conAccountNumber");
 			credit="SmartPay01";
 			td.setCredit(credit);
 			td.setDebit(debit);
+			
 			doPost(request,response,td,action);
+			
 			break;
 		case "transactions": transactionList(request,response);
 		
@@ -67,7 +71,7 @@ public class TransactionsController extends HttpServlet {
 			
 		}
 		
-		 
+		
 		
 		
 	
@@ -181,10 +185,7 @@ public class TransactionsController extends HttpServlet {
 				rd2.forward(request, response);break;
 			}
 			
-			
-			
-			
-//			System.out.println("Invalid Account!!!!");
+	
 		}
 		
 		

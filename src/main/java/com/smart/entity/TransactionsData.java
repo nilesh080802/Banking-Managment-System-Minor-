@@ -10,8 +10,10 @@ public class TransactionsData {
 	private String credit;
 	private String debit;
 	private String dateTime;
+
 	
 	//---------------------------------------------------------
+	
 	public String getFirstName() {
 		
 		return firstName;

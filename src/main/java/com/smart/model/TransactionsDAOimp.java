@@ -36,7 +36,7 @@ public class TransactionsDAOimp implements TransactionsDAO{
 			String creditTo=rs.getString("CreditedTo");
 			String debitTo=rs.getString("DebitedTo");
 			String dateTime=rs.getString("DateTime");
-			
+		
 			
 			td.setFirstName(fname);
 			td.setLastName(lname);
@@ -46,7 +46,7 @@ public class TransactionsDAOimp implements TransactionsDAO{
 			td.setCredit(creditTo);
 			td.setDebit(debitTo);
 			td.setDateTime(dateTime);
-			
+		
 			
 			transactions.add(td);
 		}
@@ -62,7 +62,7 @@ public class TransactionsDAOimp implements TransactionsDAO{
 	}
 	
 	public void addTransactionsData( TransactionsData td) {
-		String dml="insert into transactions values(?,?,?,?,?,?,?,?,?)";
+		String dml="insert into transactions(FirstName,LastName,MobileNumber,AccountNumber,ConAccountNumber,Amount,CreditedTo,DebitedTo,DateTime) values(?,?,?,?,?,?,?,?,?)";
 		try {
 			PreparedStatement ps = (PreparedStatement) con.prepareStatement(dml);
 			ps.setString(1, td.getFirstName());
@@ -74,6 +74,8 @@ public class TransactionsDAOimp implements TransactionsDAO{
 			ps.setString(7,td.getCredit());
 			ps.setString(8, td.getDebit());
 			ps.setString(9, td.getDateTime());
+		
+		
 			
 			ps.executeUpdate();
 		} catch (Exception e) {

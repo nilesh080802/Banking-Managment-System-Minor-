@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
 
 
+
     <title>Create Account For Customers</title>
     <style>
         body {
@@ -195,14 +196,14 @@
          		</div>
          		
          		<div class="row">
-         		<div class="col">Contect Number</div>
+         		<div class="col">Contact Number</div>
             	<div class="col">	   		          
                 <div class="form-item"><input type="text" name="contactNumber" id="contactNumber" placeholder="Enter  Contect number" required></div>
          		</div>
          		</div>
          		
          		<div class="row">
-         		<div class="col">Adhar Number</div>
+         		<div class="col">Adhaar Number</div>
             	<div class="col">	   		          
                 <div class="form-item"><input type="text" name="adharNumber" id="adharNumber" placeholder="Enter Adhar number" required></div>
          		</div>
@@ -218,7 +219,6 @@
     
             <div>  <button type="submit">submit </button></div>
             
-          
             </div>
         </form>
 

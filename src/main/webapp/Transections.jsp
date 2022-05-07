@@ -423,8 +423,8 @@
                           <th>Last Name</th>
                           <th>Contact number</th>
                           <th>Amount</th>
-                          <th>Debited to</th>
                           <th>Credited to</th>
+                           <th>Debited to</th>
                            <th>Date Time</th>
                         </tr>
                       </thead>
@@ -439,6 +439,7 @@
 							    <td>${transactions.getAmount()}</td>
 							    <td>${transactions.getCredit()}</td>
 							    <td>${transactions.getDebit()}</td>
+							  
 							    <td>${transactions.getDateTime()}</td>
 							    </tr>
 							</c:forEach> 
